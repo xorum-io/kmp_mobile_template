@@ -1,0 +1,46 @@
+name: KMP Mobile Template
+options:
+  createIntermediateGroups: true
+  indentWidth: 4
+  tabWidth: 4
+settings:
+  PRODUCT_BUNDLE_IDENTIFIER: "io.xorum.ios"
+  MARKETING_VERSION: 0.0.1
+  CURRENT_PROJECT_VERSION: 1
+configs:
+  Debug: debug
+  integ: debug
+  test: debug
+  Release: release
+targets:
+  "KMP Mobile Template":
+    type: application
+    platform: iOS
+    deploymentTarget: "13.2"
+    sources:  
+      - path: "KMP Mobile Template"
+    scheme: 
+      testTargets:
+        - "KMP Mobile Template Tests"
+        - "KMP Mobile Template UITests"
+      gatherCoverageData: true
+  "KMP Mobile Template Tests":
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "13.2"
+    sources:
+      - path: "KMP Mobile Template Tests"
+    dependencies:
+      - target: "KMP Mobile Template"
+    scheme: 
+      testTargets:
+        - "KMP Mobile Template"
+        - "KMP Mobile Template Tests"
+      gatherCoverageData: true
+  "KMP Mobile Template UITests":
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: "KMP Mobile Template UITests"
+    dependencies:
+      - target: "KMP Mobile Template"
