@@ -25,6 +25,7 @@ kotlin {
         val commonTest by getting {
             dependencies {
                 implementation("org.jetbrains.kotlin:kotlin-test-common:${Versions.kotlin}")
+                implementation("org.jetbrains.kotlin:kotlin-test-annotations-common:${Versions.kotlin}")
             }
         }
 
