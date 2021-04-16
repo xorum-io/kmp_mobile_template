@@ -27,7 +27,7 @@ Once cloned do the following do adapt template to your needs.
 3. Change all occurrences of `KMP Mobile Template` in `Podfile` to your project name.
 4. Change all occurrences of `KMP Mobile Template` in `project.yml` to your project name.
 5. Update `PRODUCT_BUNDLE_IDENTIFIER` in `project.yml`.
-6. Give executable permission to `init.sh` (`chmod+x init.sh`).
+6. Give executable permission to `init.sh` (`chmod +x init.sh`).
 7. Execute `./init.sh` every time you need updated `common` in iOS app.
 
 ## Release
