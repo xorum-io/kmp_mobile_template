@@ -8,7 +8,7 @@ This is a template for the development of native iOS and Android apps with share
 
 ## To Do
 
-Once cloned do the following do adapt template to your needs.
+Once cloned do the following to adapt template to your needs.
 
 ### Android (app and common folders)
 
