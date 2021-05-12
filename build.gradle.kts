@@ -5,7 +5,7 @@ buildscript {
         maven(url = "https://dl.bintray.com/soywiz/soywiz")
         maven(url = "https://kotlin.bintray.com/kotlinx")
         maven(url = "http://dl.bintray.com/kotlin/kotlin-eap")
-        maven(url = "https://dl.bintray.com/xorum-io/ReKamp")
+        mavenCentral()
     }
     dependencies {
         classpath("com.android.tools.build:gradle:4.1.3")
@@ -23,6 +23,7 @@ allprojects {
         maven(url = "https://jitpack.io")
         maven(url = "https://maven.google.com/")
         maven(url = "https://dl.bintray.com/xorum-io/ReKamp")
+        mavenCentral()
     }
 }
 
