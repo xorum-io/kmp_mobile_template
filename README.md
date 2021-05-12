@@ -8,7 +8,7 @@ This is a template for the development of native iOS and Android apps with share
 
 ## To Do
 
-Once cloned do the following do adapt template to your needs.
+Once cloned do the following to adapt template to your needs.
 
 ### Android (app and common folders)
 
@@ -19,6 +19,7 @@ Once cloned do the following do adapt template to your needs.
 5. Rename `XorumApplication` class.
 6. Change `app_name` in `strings.xml`.
 7. Change `root.project.name` in `settings.gradle`.
+8. Don't forget to remove api.open-notify.org from network-security-config later
 
 ### iOS (ios folder)
 
@@ -27,8 +28,9 @@ Once cloned do the following do adapt template to your needs.
 3. Change all occurrences of `KMP Mobile Template` in `Podfile` to your project name.
 4. Change all occurrences of `KMP Mobile Template` in `project.yml` to your project name.
 5. Update `PRODUCT_BUNDLE_IDENTIFIER` in `project.yml`.
-6. Give executable permission to `init.sh` (`chmod+x init.sh`).
+6. Give executable permission to `init.sh` (`chmod +x init.sh`).
 7. Execute `./init.sh` every time you need updated `common` in iOS app.
+8. Don't forget to remove api.open-notify.org from plist later
 
 ## Release
 
