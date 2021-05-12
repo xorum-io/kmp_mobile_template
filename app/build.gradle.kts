@@ -30,7 +30,6 @@ android {
             isDebuggable = false
         }
         getByName("debug") {
-            // matchingFallbacks = ["release"]
             signingConfig = signingConfigs.getByName("debug")
             isDebuggable = true
         }
@@ -61,15 +60,9 @@ kotlin {
                 implementation(project(":common"))
             }
         }
-
-        /*androidMain {
-
-        }*/
     }
 
-    android {
-
-    }
+    android {}
 }
 
 dependencies {
