@@ -19,7 +19,9 @@ Once cloned do the following to adapt template to your needs.
 5. Rename `XorumApplication` class.
 6. Change `app_name` in `strings.xml`.
 7. Change `root.project.name` in `settings.gradle`.
-8. Don't forget to remove api.open-notify.org from network-security-config later
+8. Change `group` in `gradle.properties`
+9. Change `spec.homepage` and `spec.summary` in `common.podspec`
+10. Don't forget to remove api.open-notify.org from network-security-config later
 
 ### iOS (ios folder)
 
