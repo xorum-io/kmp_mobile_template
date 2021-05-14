@@ -5,6 +5,6 @@ import Toast_Swift
 class IosMessageHandler: MessageHandler {
 
     func handle(message: String?) {
-        UIApplication.shared.keyWindow?.makeToast(message)
+        UIApplication.shared.windows.last { $0.isKeyWindow }?.makeToast(message)
     }
 }
