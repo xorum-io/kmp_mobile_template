@@ -5,14 +5,14 @@ import io.ktor.utils.io.*
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
 
-sealed class Response<T> {
+internal sealed class Response<T> {
 
     data class Success<T>(val result: T) : Response<T>()
 
     data class Failure<T>(val error: String?) : Response<T>()
 }
 
-suspend inline fun <T> request(block: () -> T) = try {
+internal suspend inline fun <T> request(block: () -> T) = try {
     Response.Success(block())
 } catch (clientRequestException: ClientRequestException) {
     println(clientRequestException)
@@ -22,9 +22,9 @@ suspend inline fun <T> request(block: () -> T) = try {
     Response.Failure(null)
 }
 
-suspend fun getError(responseContent: ByteReadChannel) = responseContent.readUTF8Line()?.let {
+internal suspend fun getError(responseContent: ByteReadChannel) = responseContent.readUTF8Line()?.let {
     Json { ignoreUnknownKeys = true }.decodeFromString(NetworkError.serializer(), it)
 }
 
 @Serializable
-data class NetworkError(val error: String?)
+internal data class NetworkError(val error: String?)

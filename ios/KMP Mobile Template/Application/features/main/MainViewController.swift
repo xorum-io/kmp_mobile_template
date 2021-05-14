@@ -64,6 +64,7 @@ class MainViewController: BaseViewController, ReKampStoreSubscriber {
     }
 
     override func viewDidLoad() {
+        super.viewDidLoad()
         store.dispatch(action: SpaceRequests.FetchPeopleInSpace())
     }
 }
