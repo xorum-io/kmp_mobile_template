@@ -13,7 +13,7 @@ Once cloned do the following to adapt template to your needs.
 ### Android (app and common folders)
 
 1. Update `applicationId` in `build.gradle`.
-2. Update `BACKEND_LINK` in `common/src/commonMain/kotlin/io/xorum/network/HttpClientFactory.kt`.
+2. Update `BACKEND_LINK` in `common/src/commonMain/kotlin/io/xorum/network/HttpClientFactory.kt`. If needed change `protocol` to `URLProtocol.HTTPS`
 3. Rename package `io.xorum` in `app` and `common` modules.
 4. Paste project name into the `cocoapods` and `xcode` in `common/build.gradle`.
 5. Rename `XorumApplication` class.
