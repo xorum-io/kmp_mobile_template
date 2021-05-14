@@ -17,8 +17,8 @@ internal suspend inline fun <T> request(block: () -> T) = try {
 } catch (clientRequestException: ClientRequestException) {
     println(clientRequestException)
     Response.Failure(getError(clientRequestException.response.content)?.error)
-} catch (e: Exception) {
-    println(e)
+} catch (t: Throwable) {
+    println(t)
     Response.Failure(null)
 }
 
