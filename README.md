@@ -6,6 +6,8 @@ This is a template for the development of native iOS and Android apps with share
 
 [XcodeGen](https://github.com/yonaskolb/XcodeGen) is used to generate `.xcodeproj` file from source files and `project.yml` file.
 
+Find more details on this template in [our Medium blog](https://yev-kanivets.medium.com/battle-tested-template-project-for-kotlin-multiplatform-54d0692bb00c?sk=399363810f81c43301472a08cbfef50d).
+
 ## To Do
 
 Once cloned do the following to adapt template to your needs.
