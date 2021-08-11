@@ -6,6 +6,7 @@ import io.xorum.network.Response
 import io.xorum.redux.Request
 import io.xorum.redux.ToastAction
 import io.xorum.redux.store
+import io.xorum.util.Strings
 import tw.geothings.rekotlin.Action
 
 class SpaceRequests {
@@ -17,7 +18,7 @@ class SpaceRequests {
         override suspend fun execute() {
             val result = when (val response = spaceRepository.getPeopleInSpace()) {
                 is Response.Success -> Success(response.result)
-                is Response.Failure -> Failure(response.error)
+                is Response.Failure -> Failure(Strings.get("internet_error"))
             }
             store.dispatch(result)
         }
