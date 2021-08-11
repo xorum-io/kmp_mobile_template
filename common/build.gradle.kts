@@ -3,10 +3,11 @@ plugins {
     id("kotlinx-serialization")
     id("org.jetbrains.kotlin.native.cocoapods")
     id("co.touchlab.kotlinxcodesync")
+    id("com.android.library")
 }
 
 kotlin {
-    jvm()
+    android()
 
     sourceSets {
         val commonMain by getting {
@@ -35,14 +36,14 @@ kotlin {
             }
         }
 
-        val jvmMain by getting {
+        val androidMain by getting {
             dependencies {
                 implementation("org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlin}")
                 implementation("io.ktor:ktor-client-logging-jvm:${Versions.ktor}")
             }
         }
 
-        val jvmTest by getting {
+        val androidTest by getting {
             dependencies {
                 implementation("org.jetbrains.kotlin:kotlin-test:${Versions.kotlin}")
                 implementation("org.jetbrains.kotlin:kotlin-test-junit:${Versions.kotlin}")
@@ -68,6 +69,14 @@ kotlin {
     cocoapods {
         summary = "KMP Mobile Template common module"
         homepage = "https://github.com/xorum-io/kmp_mobile_template"
+    }
+}
+
+android {
+    compileSdkVersion(29)
+    defaultConfig {
+        minSdkVersion(21)
+        targetSdkVersion(29)
     }
 }
 

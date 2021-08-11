@@ -23,7 +23,8 @@ Once cloned do the following to adapt template to your needs.
 7. Change `root.project.name` in `settings.gradle`.
 8. Change `group` in `gradle.properties`
 9. Change `spec.homepage` and `spec.summary` in `common.podspec`
-10. Don't forget to remove api.open-notify.org from network-security-config later
+10. Change package in `common/src/main/AndroidManifest.xml`
+11. Don't forget to remove api.open-notify.org from network-security-config later
 
 ### iOS (ios folder)
 

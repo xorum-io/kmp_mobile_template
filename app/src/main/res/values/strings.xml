@@ -1,3 +1,4 @@
 <resources>
   <string name="app_name" translatable="false">KMP Mobile Template</string>
+  <string name="internet_error">Check your internet connection or try again later</string>
 </resources>
