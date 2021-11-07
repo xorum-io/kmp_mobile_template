@@ -2,7 +2,7 @@ package io.xorum.android.features
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.asthmapp.android.databinding.ActivityMainBinding
+import io.xorum.android.databinding.ActivityMainBinding
 import io.xorum.features.space.redux.SpaceRequests
 import io.xorum.features.space.redux.SpaceState
 import io.xorum.redux.store
