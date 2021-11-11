@@ -1,15 +1,14 @@
 plugins {
-    id("kotlin-multiplatform")
     id("com.android.application")
-    id("kotlin-kapt")
+    kotlin("android")
 }
 
 android {
-    compileSdkVersion(30)
+    compileSdkVersion(31)
     defaultConfig {
         applicationId = "io.xorum.android"
         minSdkVersion(21)
-        targetSdkVersion(30)
+        targetSdkVersion(31)
         versionCode = 1
         versionName = "0.0.1"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -51,30 +50,23 @@ android {
     buildFeatures {
         viewBinding = true
     }
-}
-
-kotlin {
-    sourceSets {
-        commonMain {
-            dependencies {
-                implementation(project(":common"))
-            }
-        }
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
-
-    android {}
 }
 
 dependencies {
+    implementation(project(":common"))
+
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Versions.kotlin}")
 
     // Material design
-    implementation("androidx.appcompat:appcompat:1.2.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.0.4")
+    implementation("androidx.appcompat:appcompat:1.3.1")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.1")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("androidx.recyclerview:recyclerview:1.1.0")
+    implementation("androidx.recyclerview:recyclerview:1.2.1")
     implementation("androidx.cardview:cardview:1.0.0")
-    implementation("com.google.android.material:material:1.3.0")
+    implementation("com.google.android.material:material:1.4.0")
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}")
@@ -85,7 +77,7 @@ dependencies {
     implementation("io.ktor:ktor-client-android:${Versions.ktor}")
 
     // Tests
-    testImplementation("junit:junit:4.13.1")
-    androidTestImplementation("androidx.test:runner:1.3.0")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.3.0")
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test:runner:1.4.0")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
 }

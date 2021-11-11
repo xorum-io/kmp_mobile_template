@@ -47,7 +47,7 @@ kotlin {
             dependencies {
                 implementation("org.jetbrains.kotlin:kotlin-test:${Versions.kotlin}")
                 implementation("org.jetbrains.kotlin:kotlin-test-junit:${Versions.kotlin}")
-                implementation("junit:junit:4.13.1")
+                implementation("junit:junit:4.13.2")
             }
         }
     }
@@ -73,10 +73,10 @@ kotlin {
 }
 
 android {
-    compileSdkVersion(29)
+    compileSdkVersion(31)
     defaultConfig {
         minSdkVersion(21)
-        targetSdkVersion(29)
+        targetSdkVersion(31)
     }
 }
 
