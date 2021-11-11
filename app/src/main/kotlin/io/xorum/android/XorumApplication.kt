@@ -1,7 +1,6 @@
 package io.xorum.android
 
 import android.app.Application
-import androidx.appcompat.app.AppCompatDelegate
 import io.xorum.android.components.AndroidMessageHandler
 import io.xorum.redux.middlewares.messageHandlers
 import io.xorum.util.Strings
@@ -12,7 +11,7 @@ class XorumApplication : Application() {
         super.onCreate()
 
         app = this
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+
         initMessageHandler()
         initCommonStrings()
     }
@@ -30,4 +29,3 @@ class XorumApplication : Application() {
         lateinit var app: XorumApplication
     }
 }
-

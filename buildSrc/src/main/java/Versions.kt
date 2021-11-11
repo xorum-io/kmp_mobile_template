@@ -4,4 +4,5 @@ object Versions {
     const val serialization = "1.3.0-RC"
     const val ktor = "1.6.2"
     const val reKamp = "1.0.6"
+    const val compose = "1.0.5"
 }
