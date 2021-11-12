@@ -1,10 +1,7 @@
-import Foundation
-import UIKit
+import SwiftUI
 
-public class Palette {
-    
-    public static let colorPrimary = UIColor(rgb: 0x3876E7)
-    public static let colorPrimaryDark = UIColor(rgb: 0x3876E7)
-    public static let colorAccent = UIColor(rgb: 0x3876E7)
-    public static let white = UIColor(rgb: 0xFFFFFF)
+extension Color {
+    public static let colorPrimary = Color(rgb: 0x3876E7)
+    public static let colorPrimaryDark = Color(rgb: 0x3876E7)
+    public static let colorAccent = Color(rgb: 0x3876E7)
 }

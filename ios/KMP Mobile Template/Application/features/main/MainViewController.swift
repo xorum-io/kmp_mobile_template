@@ -1,49 +1,15 @@
 import UIKit
-import TinyConstraints
+import SwiftUI
 import common
 
-class MainViewController: BaseViewController, ReKampStoreSubscriber {
+class MainViewController: UIHostingController<MainView>, ReKampStoreSubscriber {
 
-    private let label = UILabel().apply {
-        $0.font = Font.body
-        $0.textColor = Palette.colorPrimary
-    }
-
-    required init() {
-        super.init(nibName: nil, bundle: nil)
-        setupView()
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    private func setupView() {
-        view.backgroundColor = Palette.white
-
-        buildViewTree()
-        setConstraints()
-    }
-
-    private func buildViewTree() {
-        [label].forEach(view.addSubview)
-    }
-
-    private func setConstraints() {
-        label.centerInSuperview()
+    init() {
+        super.init(rootView: MainView())
     }
     
-    func onNewState(state: Any) {
-        let state = state as! SpaceState
-
-        switch(state.status) {
-        case .idle:
-            label.text = "\(state.peopleInSpace?.number ?? 0)"
-        case .pending:
-            label.text = "Loading ..."
-        default:
-            break
-        }
+    @objc required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,5 +32,27 @@ class MainViewController: BaseViewController, ReKampStoreSubscriber {
     override func viewDidLoad() {
         super.viewDidLoad()
         store.dispatch(action: SpaceRequests.FetchPeopleInSpace())
+    }
+    
+    func onNewState(state: Any) {
+        let state = state as! SpaceState
+
+        switch(state.status) {
+        case .idle:
+            rootView.peoplesInSpace = "\(state.peopleInSpace?.number ?? 0)"
+        case .pending:
+            rootView.peoplesInSpace = "Loading ..."
+        default:
+            break
+        }
+    }
+}
+
+struct MainView: View {
+
+    var peoplesInSpace = ""
+    
+    var body: some View {
+        Text(peoplesInSpace)
     }
 }

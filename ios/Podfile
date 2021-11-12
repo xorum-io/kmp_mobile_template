@@ -7,9 +7,8 @@ target 'KMP Mobile Template' do
   
   	pod 'common', :path => '../common'
 
-  	pod 'TinyConstraints'
   	pod 'PKHUD', '~> 5.0'
-	  pod 'Toast-Swift', '~> 5.0.1'
+	pod 'Toast-Swift', '~> 5.0.1'
 
   	target 'KMP Mobile Template Tests' do
     	inherit! :search_paths

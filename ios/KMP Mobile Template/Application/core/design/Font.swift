@@ -1,6 +1,5 @@
-import Foundation
-import UIKit
+import SwiftUI
 
-class Font {
-    static let body = UIFont.systemFont(ofSize: 14)
+extension Font {
+    static let body = Font.system(size: 14)
 }

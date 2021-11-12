@@ -23,13 +23,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func initAppStyle() {
         UINavigationBar.appearance().run {
             $0.isTranslucent = false
-            $0.barTintColor = Palette.white
-            $0.tintColor = Palette.white
+            $0.barTintColor = .white
+            $0.tintColor = .white
         }
 
         UITabBar.appearance().run {
             $0.isTranslucent = false
-            $0.barTintColor = Palette.white
+            $0.barTintColor = .white
             $0.itemPositioning = .centered
         }
 
