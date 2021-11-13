@@ -28,5 +28,5 @@ internal fun getError(jsonString: String) =
     Json { ignoreUnknownKeys = true }.decodeFromString(NetworkError.serializer(), jsonString)
 
 @Serializable
-internal data class NetworkError(val error: String?)
+internal data class NetworkError(val error: String? = null)
 
